@@ -1,0 +1,86 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family:  arial;
+}
+:root{
+  --border-feel:#3498db;
+  --border-emty:#e0e0e0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.cercle-wrap{
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  position: relative;
+}
+.cercle-wrap::after{
+  content:"";
+  position: absolute;
+  background: var(--border-emty);
+  width: 100%;
+  height: 4px;
+  top:50%;
+  left:0;
+  transform: translateY(-50%);
+  z-index: -2;
+}
+.progress{
+  position: absolute;
+  background: var(--border-feel);
+  width: 0%;
+  height: 4px;
+  top:50%;
+  left:0;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: .3s ease;
+}
+
+.cercle{
+  background-color: #fff;
+  padding:0px 3px;
+  color:#999;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 3px solid var(--border-emty) ;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  transition: .3s ease-in;
+}
+.cercle.active{
+  color:var(--border-feel);
+  border-color:var(--border-feel);
+}
+.btn-wrap{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap:20px;
+}
+.btn{
+  border: none;
+  padding:10px 30px;
+  background: var(--border-feel);
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:.3s ease;
+}
+.btn:hover{
+  background: #00ccaa;
+}
+
+.btn:disabled{
+  background: var(--border-emty);
+  cursor: not-allowed;
+}
